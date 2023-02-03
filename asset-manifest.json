@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/store-top-crocs/static/css/main.d8e250a9.css",
+    "main.js": "/store-top-crocs/static/js/main.850fa7f0.js",
+    "index.html": "/store-top-crocs/index.html",
+    "main.d8e250a9.css.map": "/store-top-crocs/static/css/main.d8e250a9.css.map",
+    "main.850fa7f0.js.map": "/store-top-crocs/static/js/main.850fa7f0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d8e250a9.css",
+    "static/js/main.850fa7f0.js"
+  ]
+}
