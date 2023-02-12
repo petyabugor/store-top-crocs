@@ -151,16 +151,30 @@ body {
 
   &__item {
     display: flex;
-    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    
+    gap: 20px;
     border-top: 1px solid $gray-line;
     padding-top: 30px;
     margin-top: 30px;
 
+    &-right {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &-left {
+      display: flex;
+      gap: 30px;
+
+    }
+
     &-img {
       display: flex;
       align-items: center;
-      margin-right: 15px;
-      width: 10%;
 
       img {
         width: 80px;
@@ -172,7 +186,7 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      width: 40%;
+      max-width: 300px;
 
       h3 {
         font-weight: bold;
@@ -191,7 +205,7 @@ body {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 13%;
+      
 
       &-minus {
         svg {
@@ -210,10 +224,8 @@ body {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 33%;
-      @media (max-width: 760px){
-        width: 23%;
-      }
+
+      @media (max-width: 760px) {}
 
       b {
         font-weight: bold;
@@ -226,7 +238,7 @@ body {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      width: 4%;
+
 
       .button {
         border-color: darken($color: $gray-line, $amount: 10);
