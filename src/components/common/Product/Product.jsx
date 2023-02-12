@@ -1,22 +1,37 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { addItem } from '../../../redux/slices/cartSlice';
 
-function Product(props) {
+function Product({ title, price, id, imageUrl, sizes }) {
    const [activeSizes, setActiveSizes] = useState(0);
+   const dispatch = useDispatch();
+   const cartItem = useSelector((state) => state.cart.items.find((obj) => obj.id === id));
+   const addedCount = cartItem ? cartItem.count : 0;
+   const onClickAdd = () => {
+      const item = {
+         id,
+         title,
+         price,
+         imageUrl,
+         size: sizes[activeSizes],
+      };
+      dispatch(addItem(item));
+   };
    return (
       <div className="product-block-wrapper">
          <div className="product-block">
             <div className="product-block__content">
                <div className="product-block__image">
                   <img
-                     src={props.img}
+                     src={imageUrl}
                      alt="Crocs"
                   />
                </div>
-               <h4 className="product-block__title">{props.title}</h4>
+               <h4 className="product-block__title">{title}</h4>
             </div>
             <div className="product-block__selector">
                <ul>
-                  {props.sizes.map((value, i) => (
+                  {sizes.map((value, i) => (
                      <li
                         key={value}
                         onClick={() => setActiveSizes(i)}
@@ -29,8 +44,11 @@ function Product(props) {
             </div>
 
             <div className="product-block__bottom">
-               <div className="product-block__price">{props.price}</div>
-               <button className="button button--outline button--add">
+               <div className="product-block__price">{price}</div>
+               <button
+                  onClick={onClickAdd}
+                  className="button button--outline button--add"
+               >
                   <svg
                      width="12"
                      height="12"
@@ -44,7 +62,7 @@ function Product(props) {
                      />
                   </svg>
                   <span>Добавити</span>
-                  <i>0</i>
+                  {addedCount > 0 && <i>{addedCount}</i>}
                </button>
             </div>
          </div>

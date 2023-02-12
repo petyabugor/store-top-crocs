@@ -2,8 +2,12 @@ import React from 'react';
 import { GiRunningShoe } from 'react-icons/gi';
 import { Link } from 'react-router-dom';
 import Search from '../common/Search/Search';
+import { useSelector } from 'react-redux';
 
 function Header() {
+   const { totalPrice, items } = useSelector((state) => state.cart);
+
+   const totalCount = items.reduce((sum, item)=> item.count + sum, 0)
    return (
       <div className="header">
          <div className="container">
@@ -11,19 +15,19 @@ function Header() {
                <Link to="/">
                   <GiRunningShoe className="header__logo-img"></GiRunningShoe>
                </Link>
-               <div className='header__title'>
+               <div className="header__title">
                   <Link to="/">
                      <h1>TOP-CROCS</h1>
                   </Link>
                </div>
             </div>
-            <Search  />
+            <Search />
             <div className="header__cart">
                <Link
                   to="/cart"
                   className="button button--cart"
                >
-                  <span>520 грн</span>
+                  <span>{totalPrice} грн</span>
                   <div className="button__delimiter"></div>
                   <svg
                      width="18"
@@ -54,7 +58,7 @@ function Header() {
                         strokeLinejoin="round"
                      />
                   </svg>
-                  <span>3</span>
+                  <span>{totalCount}</span>
                </Link>
             </div>
          </div>
