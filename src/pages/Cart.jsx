@@ -1,11 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import CartItem from '../components/common/CartItem/CartItem';
+import { clearItem } from '../redux/slices/cartSlice';
+import CartEmpty from '../components/common/CartEmpty/CartEmpty';
 
 function Cart() {
-   const items = useSelector((state) => state.cart.items);
+   const dispatch = useDispatch();
+   const { items, totalPrice } = useSelector((state) => state.cart);
+   const totalCount = items.reduce((sum, item) => item.count + sum, 0);
+   const onClickClear = () => {
+      dispatch(clearItem());
+   };
+   if (!totalPrice) {
+      return <CartEmpty/>
+   }
    return (
       <div className="container--cart">
          <div className="cart">
@@ -42,7 +52,10 @@ function Cart() {
                   </svg>
                   Кошик
                </h2>
-               <div className="cart__clear">
+               <div
+                  onClick={onClickClear}
+                  className="cart__clear"
+               >
                   <svg
                      width="20"
                      height="20"
@@ -85,18 +98,21 @@ function Cart() {
             </div>
             <div className="content__items">
                {items.map((obj) => (
-                  <CartItem key={obj.id} {...obj}></CartItem>
+                  <CartItem
+                     key={obj.id}
+                     {...obj}
+                  ></CartItem>
                ))}
             </div>
             <div className="cart__bottom">
                <div className="cart__bottom-details">
                   <span>
                      {' '}
-                     Всього товару: <b>{items.count}шт.</b>{' '}
+                     Всього товару: <b>{totalCount}шт.</b>{' '}
                   </span>
                   <span>
                      {' '}
-                     Сума замовлення: <b>900 грн</b>{' '}
+                     Сума замовлення: <b>{totalPrice} грн</b>{' '}
                   </span>
                </div>
                <div className="cart__bottom-buttons">
