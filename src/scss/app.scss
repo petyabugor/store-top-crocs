@@ -150,10 +150,10 @@ body {
   }
 
   &__item {
+    max-width: 800px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
     gap: 20px;
     border-top: 1px solid $gray-line;
     padding-top: 30px;
@@ -164,12 +164,21 @@ body {
       flex-direction: row;
       align-items: center;
       gap: 20px;
+      @media (max-width: 550px) {
+        flex-direction: column-reverse;
+      }
+      
     }
 
     &-left {
       display: flex;
       gap: 30px;
-
+      max-width: 400px;
+      @media (max-width: 700px) {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
     }
 
     &-img {
@@ -193,11 +202,19 @@ body {
         font-size: 22px;
         line-height: 27px;
         letter-spacing: 0.01em;
+        @media (max-width: 700px) {
+          font-size: 16px;
+          text-align: center;
+        }
       }
 
       p {
         font-size: 18px;
         color: #8d8d8d;
+        @media (max-width: 700px) {
+          font-size: 16px;
+          text-align: center;
+        }
       }
     }
 
@@ -205,7 +222,8 @@ body {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      
+      width: 100px;
+      gap: 10px;
 
       &-minus {
         svg {
@@ -223,6 +241,7 @@ body {
     &-price {
       display: flex;
       align-items: center;
+      width: 100px;
       justify-content: center;
 
       @media (max-width: 760px) {}
@@ -238,6 +257,7 @@ body {
       display: flex;
       align-items: center;
       justify-content: flex-end;
+      width: 50px;
 
 
       .button {
@@ -257,6 +277,7 @@ body {
           width: 11.5px;
           height: 11.5px;
           position: relative;
+          
         }
 
         &:hover,
@@ -277,6 +298,9 @@ body {
 
       span {
         font-size: 22px;
+        @media (max-width: 550px) {
+          text-align: center;
+        }
 
         &:last-of-type {
           b {
@@ -290,6 +314,7 @@ body {
       display: flex;
       justify-content: space-between;
       margin-top: 40px;
+      
 
       .go-back-btn {
         display: flex;
@@ -303,6 +328,7 @@ body {
           color: darken($color: $gray-line, $amount: 20);
           font-weight: 500;
           font-weight: 600;
+          
         }
 
         &:hover {
@@ -325,10 +351,10 @@ body {
       }
 
       .pay-btn {
-        font-size: 16px;
+        font-size: 22px;
         font-weight: 600;
-        width: 210px;
-        padding: 16px;
+        width: 230px;
+        padding: 10px;
       }
     }
   }

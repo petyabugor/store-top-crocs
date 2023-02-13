@@ -92,11 +92,11 @@ function Cart() {
                <div className="cart__bottom-details">
                   <span>
                      {' '}
-                     Всего пицц: <b>3 шт.</b>{' '}
+                     Всього товару: <b>{items.count}шт.</b>{' '}
                   </span>
                   <span>
                      {' '}
-                     Сумма заказа: <b>900 грн</b>{' '}
+                     Сума замовлення: <b>900 грн</b>{' '}
                   </span>
                </div>
                <div className="cart__bottom-buttons">
@@ -120,11 +120,11 @@ function Cart() {
                         />
                      </svg>
                      <Link to="/">
-                        <span>Вернуться назад</span>
+                        <span>Повернутися назад</span>
                      </Link>
                   </a>
                   <div className="button pay-btn">
-                     <span>Оплатить сейчас</span>
+                     <span>Оформити замовлення</span>
                   </div>
                </div>
             </div>
