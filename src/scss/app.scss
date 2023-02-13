@@ -91,7 +91,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    gap: 10px;
   }
 
   .content__title {
@@ -116,6 +116,7 @@ body {
   &__clear {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     cursor: pointer;
     @include noselect();
 
@@ -164,21 +165,23 @@ body {
       flex-direction: row;
       align-items: center;
       gap: 20px;
+
       @media (max-width: 550px) {
         flex-direction: column-reverse;
       }
-      
+
     }
 
     &-left {
       display: flex;
       gap: 30px;
       max-width: 400px;
+
       @media (max-width: 700px) {
         flex-wrap: wrap;
         justify-content: center;
       }
-      
+
     }
 
     &-img {
@@ -202,6 +205,7 @@ body {
         font-size: 22px;
         line-height: 27px;
         letter-spacing: 0.01em;
+
         @media (max-width: 700px) {
           font-size: 16px;
           text-align: center;
@@ -211,6 +215,7 @@ body {
       p {
         font-size: 18px;
         color: #8d8d8d;
+
         @media (max-width: 700px) {
           font-size: 16px;
           text-align: center;
@@ -256,7 +261,7 @@ body {
     &-remove {
       display: flex;
       align-items: center;
-      justify-content: flex-end;
+      justify-content: center;
       width: 50px;
 
 
@@ -277,7 +282,7 @@ body {
           width: 11.5px;
           height: 11.5px;
           position: relative;
-          
+
         }
 
         &:hover,
@@ -298,6 +303,7 @@ body {
 
       span {
         font-size: 22px;
+
         @media (max-width: 550px) {
           text-align: center;
         }
@@ -314,7 +320,11 @@ body {
       display: flex;
       justify-content: space-between;
       margin-top: 40px;
-      
+      gap: 10px;
+
+      @media (max-width: 550px) {
+        flex-direction: column-reverse;
+      }
 
       .go-back-btn {
         display: flex;
@@ -324,11 +334,15 @@ body {
 
         border-color: darken($color: $gray-line, $amount: 10);
 
+        @media (max-width: 550px) {
+          width: 100%;
+        }
+
         span {
           color: darken($color: $gray-line, $amount: 20);
           font-weight: 500;
           font-weight: 600;
-          
+
         }
 
         &:hover {
@@ -355,6 +369,10 @@ body {
         font-weight: 600;
         width: 230px;
         padding: 10px;
+
+        @media (max-width: 550px) {
+          width: 100%;
+        }
       }
     }
   }
