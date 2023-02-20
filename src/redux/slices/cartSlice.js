@@ -27,11 +27,13 @@ const cartSlice = createSlice({
          if (findItem) {
             findItem.count--;
          }
-         state.totalPrice = state.totalPrice-findItem.price
+         state.totalPrice = state.totalPrice - findItem.price;
       },
 
       removeItem(state, action) {
          state.items = state.items.filter((obj) => obj.id !== action.payload);
+         /* const findItem = state.items.find((obj) => obj.id === action.payload);
+         state.totalPrice = state.totalPrice - findItem.price; */
       },
       clearItem(state, action) {
          state.items = [];

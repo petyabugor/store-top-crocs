@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import {  useDispatch } from 'react-redux';
 import { addItem, minusItem, removeItem } from '../../../redux/slices/cartSlice';
 
 function CartItem({ title, price, id, imageUrl, size, count }) {
@@ -16,7 +16,7 @@ function CartItem({ title, price, id, imageUrl, size, count }) {
    };
    return (
       <div
-         key={id}
+         
          className="cart__item"
       >
          <div className="cart__item-left">

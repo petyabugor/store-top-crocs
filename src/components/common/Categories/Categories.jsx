@@ -1,10 +1,11 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 function Categories({ value, onClickCategory }) {
-   const categories = ['Всі', 'Чоловікам', 'Жінкам', 'Хлопчикам', 'Дівчаткам', 'Розпродаж'];
+   const categories = ['Всі', 'Чоловікам', 'Жінкам', 'Хлопчикам', 'Дівчаткам', 'Акційний'];
 
    return (
       <div className="categories">
+         
          <ul>
             {categories.map((name, i) => (
                <li

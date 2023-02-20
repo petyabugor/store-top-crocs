@@ -1,12 +1,34 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { addItem } from '../../../redux/slices/cartSlice';
+import { setItemId } from '../../../redux/slices/filterSlice';
+import { Link } from 'react-router-dom';
+import { fetchProducts } from '../../../redux/slices/productSlice';
 
 function Product({ title, price, id, imageUrl, sizes }) {
    const [activeSizes, setActiveSizes] = useState(0);
    const dispatch = useDispatch();
    const cartItem = useSelector((state) => state.cart.items.find((obj) => obj.id === id));
    const addedCount = cartItem ? cartItem.count : 0;
+
+   const itemId = useSelector(state=> state.filters)
+   
+
+   const items = useSelector((state) => state.products.items);
+   const thisProduct = items.find((prod) => prod.id === id);
+   const onClickItemId = (index) => {
+      dispatch(setItemId(index));
+   };
+
+   const getProductsDetail = async () => {
+      const id = itemId;
+      dispatch(
+         fetchProducts({
+            id
+         }),
+      );
+   };
+
    const onClickAdd = () => {
       const item = {
          id,
@@ -27,7 +49,7 @@ function Product({ title, price, id, imageUrl, sizes }) {
                      alt="Crocs"
                   />
                </div>
-               <h4 className="product-block__title">{title}</h4>
+              <Link to={`/products/${thisProduct.id}`}> <h4 onClick={() => onClickItemId (thisProduct.id)} className="product-block__title">{title}</h4></Link>
             </div>
             <div className="product-block__selector">
                <ul>

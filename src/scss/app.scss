@@ -10,7 +10,7 @@ body {
 .wrapper {
   width: calc(100vw - 100px);
   height: 100%;
-  background-color: #fff;
+  background-color: #fff ;
   margin: 50px auto;
   border-radius: 10px;
   max-width: 1400px;
@@ -160,7 +160,7 @@ body {
     border-top: 1px solid $gray-line;
     padding-top: 30px;
     margin-top: 30px;
-    
+
     &-right {
       display: flex;
       flex-direction: row;
@@ -306,6 +306,7 @@ body {
       display: flex;
       justify-content: space-between;
       gap: 5px;
+
       span {
         font-size: 22px;
 
@@ -382,15 +383,17 @@ body {
       }
     }
   }
+
   &--image {
     max-width: 250px;
     margin: 45px auto 60px;
-    img{
+
+    img {
       width: 100%;
     }
   }
 
-  
+
 
   &--empty {
     margin: 0 auto;
@@ -410,11 +413,11 @@ body {
       top: 2px;
     }
 
-    
+
 
     .button--black {
       padding: 12px 15px 14px;
-      
+
       margin: 0 auto;
       font-weight: 600;
       font-size: 18px;

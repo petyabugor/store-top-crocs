@@ -5,27 +5,54 @@ import Product from '../common/Product/Product';
 import Skeleton from '../common/Product/skeleton';
 import Sort, { list } from '../common/Sort/Sort';
 import { useSelector, useDispatch } from 'react-redux';
-import { setCategoryId, setFilters } from '../../redux/slices/filterSlice';
+import { setCategoryId, setFilters, setItemId } from '../../redux/slices/filterSlice';
+import { fetchProducts, setItems } from '../../redux/slices/productSlice';
 import axios from 'axios';
 import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
+import PromoItem from '../../pages/PromoItem/PromoItem';
 
 function Main() {
+   const { items, isLoading } = useSelector((state) => state.products);
    const categoryId = useSelector((state) => state.filter.categoryId);
    const dispatch = useDispatch();
    const navigate = useNavigate();
-   const sortType = useSelector((state) => state.filter.sort);
+   const sort = useSelector((state) => state.filter.sort);
    const isMounted = useRef(false);
    const isSearch = useRef(false);
-
-   const [products, setProducts] = useState([]);
-   const [isLoading, setIsLoading] = useState(true);
    const { searchValue } = useContext(searchContext);
    const category = categoryId > 0 ? `category=${categoryId}` : '';
 
    const onClickCategory = (index) => {
       dispatch(setCategoryId(index));
    };
+
+   const getProducts = async () => {
+      const sortBy = sort.sortProperty;
+      dispatch(
+         fetchProducts({
+            category,
+            sortBy,
+         }),
+      );
+   };
+
+   /*  useEffect(() => {
+      getProducts();
+   }, []); */
+
+   useEffect(() => {
+      if (isMounted.current) {
+         const queryString = qs.stringify({
+            sort: sort.sortProperty,
+            categoryId,
+         });
+         navigate(`?${queryString}`);
+      }
+      /* getProducts();
+      console.log(products) */
+      isMounted.current = true;
+   }, [categoryId, sort.sortProperty]);
 
    useEffect(() => {
       if (window.location.search) {
@@ -37,6 +64,13 @@ function Main() {
    }, []);
 
    useEffect(() => {
+      if (!isSearch.current) {
+         getProducts();
+      }
+      isSearch.current = false;
+   }, [categoryId, sort.sortProperty, searchValue]);
+
+   /*  useEffect(() => {
       setIsLoading(true);
       if (!isSearch.current) {
          axios
@@ -44,27 +78,18 @@ function Main() {
                `https://63b2bd9f5901da0ab36c48c2.mockapi.io/items?${category}&sortby=${sortType.sortProperty}&order=asc`,
             )
             .then((res) => {
-               setProducts(res.data);
+               dispatch(setItems(res.data));
                setIsLoading(false);
             });
       }
       isSearch.current = false;
       window.scrollTo(0, 0);
-   }, [categoryId, sortType.sortProperty]);
-   useEffect(() => {
-      if (isMounted.current) {
-         const queryString = qs.stringify({
-            sortProperty: sortType.sortProperty,
-            categoryId,
-         });
-         navigate(`?${queryString}`);
-      }
-      isMounted.current = true;
-   }, [categoryId, sortType.sortProperty]);
+   }, [categoryId, sortType.sortProperty]); */
 
    return (
       <div className="content">
          <div className="container">
+            <PromoItem />
             <div className="content__top">
                <Categories
                   value={categoryId}
@@ -72,11 +97,12 @@ function Main() {
                />
                <Sort />
             </div>
+
             <h2 className="content__title">Всі товари</h2>
             <div className="content__items">
-               {isLoading
+               {isLoading === 'loading'
                   ? [...new Array(12)].map((_, index) => <Skeleton key={index} />)
-                  : products
+                  : items
                        .filter((obj) => {
                           if (obj.title.toLowerCase().includes(searchValue.toLowerCase()))
                              return true;
@@ -84,7 +110,7 @@ function Main() {
                              return false;
                           }
                        })
-                       .map((obj) => (
+                       .map((obj, i) => (
                           <Product
                              key={obj.id}
                              {...obj}
