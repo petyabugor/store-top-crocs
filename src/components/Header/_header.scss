@@ -2,18 +2,25 @@
 
 .header {
   border-bottom: 1px solid $gray-line;
-  padding: 40px 0;
+  padding: 30px 0;
   box-shadow: 0px 3px 20px 0px #e7e6e6;
-  
+  position: fixed;  
+  top: 0;  
+  z-index: 100;  
+  width: 100%;
+  background-color: rgba(187, 187, 187, 0.5);
+  @media (max-width: 768px) {
+    padding: 20px 0;
+  }
 
   .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 370px);
-    grid-gap: 10px;
-    justify-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    justify-content: space-around;
-  }
+    max-width: 1400px;
+    }
+
 
   &__logo {
     display: flex;
@@ -22,6 +29,7 @@
 
 
   }
+  
 
   &__title {
 
@@ -35,7 +43,7 @@
     @media(max-width: 560px) {
 
       h1 {
-        font-size: 24px;
+        font-size: 18px;
       }
 
     }

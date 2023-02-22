@@ -8,21 +8,20 @@ body {
 }
 
 .wrapper {
-  width: calc(100vw - 100px);
   height: 100%;
-  background-color: #fff ;
-  margin: 50px auto;
+  background-color: #fff;
+  margin: 0 auto;
   border-radius: 10px;
-  max-width: 1400px;
 
-  @media(max-width: 650px) {
-    width: calc(100vw - 30px);
-    margin-top: 15px;
-  }
 }
 
 .content {
   padding: 40px 0;
+
+  .container {
+
+    max-width: 1400px;
+  }
 
   &__title {
     margin: 35px 0;
@@ -48,10 +47,19 @@ body {
     }
   }
 
+  &__top-sort {
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+  }
+
   &__top {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 
     @media(max-width: 1360px) {
       flex-direction: column;

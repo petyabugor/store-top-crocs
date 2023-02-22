@@ -11,6 +11,7 @@ import wind from '../../assets/img/icons/wind.png';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import SwiperItem from '../../components/common/Swiper/Swiper';
+import Timer from '../../components/common/Timer/Timer';
 
 function PromoItem() {
    useEffect(() => {
@@ -21,27 +22,39 @@ function PromoItem() {
    return (
       <div className={styles.wrapper}>
          <div className={styles.top}>
+            <h2 className={styles.title}>AIR JORDAN XXXI lOW</h2>
+            <div className={styles.top_content}>
             <div
-               data-aos="fade-left"
-               className={styles.left}
-            >
-               <h2 className={styles.title}>AIR JORDAN XXXI lOW</h2>
-               <p className={styles.text}>
-                  <b> Легендарні </b> кросівки <br />
-                  зі знижкою <b> 30% </b>
-               </p>
-               <button className={styles.button}>Замовити</button>
-            </div>
-            <div
-               data-aos="zoom-in-up"
-               className={styles.right}
-            >
-               <img
-                  src={AirJordan}
-                  alt=""
-               />
+                  data-aos="zoom-in-up"
+                  className={styles.right}
+               >
+                  <img
+                     src={AirJordan}
+                     alt=""
+                  />
+               </div>
+               <div
+                  data-aos="fade-left"
+                  className={styles.left}
+               >
+                  <p className={styles.text}>
+                     <b> Легендарні </b> кросівки 
+                     зі знижкою <b> 30% </b>
+                  </p>
+                  <div className={styles.price}>
+                     <del>
+                        <span className={styles.amount}>1850 грн</span>
+                     </del>
+                     <ins>
+                        <span className={styles.amount2}>1300 <b>грн</b> </span>
+                     </ins>
+                  </div>
+                  <button className={styles.button}>Замовити</button>
+               </div>
+               
             </div>
          </div>
+         <Timer/>
          <div className={styles.description_wrapper}>
             <div
                data-aos="fade-up"
@@ -92,53 +105,6 @@ function PromoItem() {
                </p>
             </div>
          </div>
-         {/* <div className={styles.container}>
-            <Swiper
-               modules={[Navigation, Pagination, EffectCoverflow]}
-               navigation={true}
-               effect={'coverflow'}
-               centeredSlides={true}
-               slidesPerView={window.innerWidth < 768 ? 1 : 'auto'}
-               loop={true}
-               coverflowEffect={{
-                  rotate: 50,
-                  stretch: 0,
-                  depth: 100,
-                  modifier: 1,
-                  slideShadows: true,
-               }}
-               pagination={{
-                  clickable: true,
-               }}
-               className={styles.mySwiper}
-            >
-               <SwiperSlide>
-                  <img
-                     src={AirJordan2}
-                     alt=""
-                  />
-               </SwiperSlide>
-               <SwiperSlide>
-                  <img
-                     src={AirJordan3}
-                     alt=""
-                  />
-               </SwiperSlide>
-               <SwiperSlide>
-                  <img
-                     src={AirJordan4}
-                     alt=""
-                  />
-               </SwiperSlide>
-               <SwiperSlide>
-                  <img
-                     src={AirJordan2}
-                     alt=""
-                  />
-               </SwiperSlide>
-               ...
-            </Swiper>
-         </div> */}
          <SwiperItem />
          <div></div>
       </div>

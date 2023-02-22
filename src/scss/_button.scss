@@ -2,7 +2,6 @@
 
 .button {
   display: inline-block;
-  background-color: $orange;
   border-radius: 30px;
   padding: 10px 20px;
   min-width: 100px;
@@ -10,6 +9,7 @@
   cursor: pointer;
   transition: background-color $duration ease-in-out, border-color $duration ease-in-out;
   border: 1px solid transparent;
+  border-color: $orange;
   @include noselect();
 
   &,
@@ -17,8 +17,13 @@
     color: #fff;
   }
 
+  p {
+    color: #fff;
+  }
+
   i,
   span,
+  p,
   path,
   svg {
     transition: all $duration ease-in-out;
@@ -45,11 +50,11 @@
   }
 
   &--black {
-    background-color: $black;
+    background-color: #fff;
 
     &:hover,
     &:active {
-      background-color: lighten($color: $black, $amount: 10);
+      background-color: darken($black, 12%);
     }
   }
 
@@ -62,6 +67,7 @@
       color: $orange;
     }
 
+
     svg {
       path {
         fill: $orange;
@@ -69,12 +75,13 @@
     }
 
     &:hover {
-      background-color: $orange;
+
 
       &,
       span {
         color: #fff;
       }
+      
 
       svg {
         path {
@@ -91,9 +98,17 @@
   &__delimiter {
     width: 1px;
     height: 25px;
-    background-color: rgba(255, 255, 255, 0.25);
+    background-color: #fff;
     margin-left: 14px;
     margin-right: 14px;
+
+    @media(max-width: 740px) {
+      display: none;
+    }
+
+    &:hover {
+      background-color: #fff;
+    }
   }
 
   &--add {
@@ -131,19 +146,56 @@
   }
 
   &--cart {
+    background-color: rgba(187, 187, 187, 0.5);
+    border-color:rgba(187, 187, 187, 0.5); ;
     display: flex;
     align-items: center;
     line-height: 23px;
     padding: 12px 25px;
+    
 
     svg {
-      margin-right: 8px;
+      fill: #fff;
+      stroke: #fff;
+      margin-right: 6px;
       margin-bottom: 1px;
+
+    }
+
+    &:hover {
+
+
+      &,
+      span,p {
+        color: #fff;
+      }
+
+      svg {
+        path {
+          fill: #fff;
+        }
+      }
+
     }
 
     span {
+
       font-weight: 600;
       font-size: 16px;
+
+    }
+
+    @media(max-width: 740px) {
+      line-height: 23px;
+      
+
+      span {
+        display: none;
+      }
+
+      svg {
+        width: 30px;
+      }
     }
   }
 }

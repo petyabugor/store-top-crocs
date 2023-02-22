@@ -11,6 +11,7 @@ import axios from 'axios';
 import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
 import PromoItem from '../../pages/PromoItem/PromoItem';
+import Search from '../common/Search/Search';
 
 function Main() {
    const { items, isLoading } = useSelector((state) => state.products);
@@ -95,6 +96,9 @@ function Main() {
                   value={categoryId}
                   onClickCategory={onClickCategory}
                />
+            </div>
+            <div className="content__top-sort">
+               <Search />
                <Sort />
             </div>
 
