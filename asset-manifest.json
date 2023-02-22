@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/store-top-crocs/static/css/main.86c2cd6c.css",
-    "main.js": "/store-top-crocs/static/js/main.8a005346.js",
+    "main.css": "/store-top-crocs/static/css/main.8a108c34.css",
+    "main.js": "/store-top-crocs/static/js/main.01f38f1e.js",
     "static/media/AirJordan.png": "/store-top-crocs/static/media/AirJordan.bb04370de21f4f57d8f4.png",
     "static/media/AIR_JORDAN_XXXI_3.jpg": "/store-top-crocs/static/media/AIR_JORDAN_XXXI_3.3789dc76c8ef6838daa0.jpg",
     "static/media/AIR_JORDAN_XXXI_2.jpg": "/store-top-crocs/static/media/AIR_JORDAN_XXXI_2.8d217c1aa3774206bc18.jpg",
@@ -9,11 +9,11 @@
     "static/media/wind.png": "/store-top-crocs/static/media/wind.3b00d157b7a38d0456bb.png",
     "static/media/empty-cart.png": "/store-top-crocs/static/media/empty-cart.70f6a78ea5d49e7bb89e.png",
     "index.html": "/store-top-crocs/index.html",
-    "main.86c2cd6c.css.map": "/store-top-crocs/static/css/main.86c2cd6c.css.map",
-    "main.8a005346.js.map": "/store-top-crocs/static/js/main.8a005346.js.map"
+    "main.8a108c34.css.map": "/store-top-crocs/static/css/main.8a108c34.css.map",
+    "main.01f38f1e.js.map": "/store-top-crocs/static/js/main.01f38f1e.js.map"
   },
   "entrypoints": [
-    "static/css/main.86c2cd6c.css",
-    "static/js/main.8a005346.js"
+    "static/css/main.8a108c34.css",
+    "static/js/main.01f38f1e.js"
   ]
 }
