@@ -26,7 +26,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0px 10px;
+  
 }
 
 .title {
@@ -67,10 +67,11 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-
+  padding: 0px 10px;
 }
 
 .price {
+  display: block;
   text-align: center;
 
   .amount {
@@ -240,9 +241,12 @@
   align-items: center;
   border-radius: 20px;
   padding: 40px 10px;
-  box-shadow: 0px 3px 20px 0px #adaaaa;
+  /* box-shadow: 0px 3px 20px 0px #adaaaa; */
   text-align: center;
-  background: linear-gradient(to bottom, #ffffff, #eff1f1, #e4e6e4, #c6c7c6, #868686, );
+  /* background: linear-gradient(to bottom, #ffffff, #eff1f1, #e4e6e4, #c6c7c6, #868686, ); */
+  background: linear-gradient(40deg, rgba(255, 255, 255, .57), rgba(240, 240, 240, .53));
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 
   @media (max-width: 900px) {
     width: 100%;

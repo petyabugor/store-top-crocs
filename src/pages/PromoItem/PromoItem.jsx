@@ -11,6 +11,7 @@ import Aos from 'aos';
 import 'aos/dist/aos.css';
 import SwiperItem from '../../components/common/Swiper/Swiper';
 import Timer from '../../components/common/Timer/Timer';
+import Form from '../../components/Form/Form';
 
 function PromoItem() {
    useEffect(() => {
@@ -140,6 +141,18 @@ function PromoItem() {
                />
             </div>
          </div>
+         <SwiperItem />
+         <div className={styles.price}>
+            <del>
+               <span className={styles.amount}>1850 грн</span>
+            </del>
+            <ins>
+               <span className={styles.amount2}>
+                  1300 <b>грн</b>{' '}
+               </span>
+            </ins>
+         </div>
+         <Form/>
       </div>
    );
 }

@@ -1,8 +1,7 @@
 .swiper-slide {
     background-position: center;
     background-size: cover;
-    max-width: 600px;
-    
+    max-width: 400px;
   }
   
   @media (max-width: 768px) {
