@@ -3,10 +3,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 100px;
+  gap: 50px;
 
   @media (max-width: 768px) {
-    gap: 50px;
+    gap: 25px;
     padding-top: 120px;
   }
 }
@@ -26,6 +26,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0px 10px;
 }
 
 .title {
@@ -128,7 +129,8 @@
     font-size: 32px;
     text-decoration: none;
     padding: 1em 1em 1em .5em;
-    b{
+
+    b {
       font-size: 24px;
       font-weight: 600;
     }
@@ -221,6 +223,7 @@
 }
 
 .description_wrapper {
+  padding: 0px 10px;
   display: flex;
   gap: 40px;
   margin-top: -40px;
@@ -250,6 +253,58 @@
 
 .description_icon {
   width: 50px;
+
+  img {
+    width: 100%;
+  }
+}
+
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.feature_content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  text-align: left;
+}
+
+.feature_title1 {
+  font-size: 24px;
+}
+
+.feature_title {
+  color: #ACACAC;
+  font-size: 14px;
+}
+
+.feature_text {
+  font-size: 14px;
+}
+
+.size {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px 10px;
+}
+
+.size_title {
+  font-size: 24px;
+}
+
+.size_text {
+  color: #ACACAC;
+}
+
+.size_image {
+  max-width: 800px;
 
   img {
     width: 100%;

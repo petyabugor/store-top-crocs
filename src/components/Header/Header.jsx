@@ -9,8 +9,8 @@ function Header() {
 
    const totalCount = items.reduce((sum, item)=> item.count + sum, 0)
    return (
-      <div className="header header-wrapper">
-         <div className="container">
+      <div className="header">
+         <div className="header__container">
             <div className="header__logo">
                <Link to="/">
                   <GiRunningShoe className="header__logo-img"></GiRunningShoe>

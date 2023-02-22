@@ -1,8 +1,8 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import AirJordan2 from '../../../assets/img/AIR_JORDAN_XXXI_2.jpg';
-import AirJordan3 from '../../../assets/img/AIR_JORDAN_XXXI_3.jpg';
-import AirJordan4 from '../../../assets/img/AIR_JORDAN_XXXI_4.jpg';
+import AirJordan2 from '../../../assets/img/AIR_JORDAN_XXXI_2.jpeg';
+import AirJordan3 from '../../../assets/img/AIR_JORDAN_XXXI_3.jpeg';
+import AirJordan4 from '../../../assets/img/AIR_JORDAN_XXXI_4.jpeg';
 
 // Import Swiper styles
 import 'swiper/css';

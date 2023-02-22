@@ -36,22 +36,25 @@ function Timer() {
    const time = useCountdown(deadline);
 
    return (
-      <div className={styles.timer_box}>
-         <div className={styles.timer}>
+      <> 
+      <h4 className={styles.title}>До кінця акціїї залишилось</h4>
+         <div className={styles.timer_box}>
+            <div className={styles.timer}>
+               <ul className={styles.flex}>
+                  <li className={styles.number}>{time.days}</li>
+                  <li className={styles.number}>{time.hours}</li>
+                  <li className={styles.number}>{time.minutes}</li>
+                  <li className={styles.number}>{time.seconds}</li>
+               </ul>
+            </div>
             <ul className={styles.flex}>
-               <li className={styles.number}>{time.days}</li>
-               <li className={styles.number}>{time.hours}</li>
-               <li className={styles.number}>{time.minutes}</li>
-               <li className={styles.number}>{time.seconds}</li>
+               <li className={styles.text}>день</li>
+               <li className={styles.text}>годин</li>
+               <li className={styles.text}>хвилин</li>
+               <li className={styles.text}>секунд</li>
             </ul>
          </div>
-         <ul className={styles.flex}>
-            <li className={styles.text}>день</li>
-            <li className={styles.text}>годин</li>
-            <li className={styles.text}>хвилин</li>
-            <li className={styles.text}>секунд</li>
-         </ul>
-      </div>
+      </>
    );
 }
 

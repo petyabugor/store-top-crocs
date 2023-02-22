@@ -89,7 +89,7 @@ function Main() {
 
    return (
       <div className="content">
-         <div className="container">
+         <div className="content__container">
             <PromoItem />
             <div className="content__top">
                <Categories

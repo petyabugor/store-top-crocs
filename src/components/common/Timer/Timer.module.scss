@@ -1,7 +1,27 @@
+.title {
+    font-family: 'Jost', sans-serif;
+    text-transform: uppercase;
+    font-size: 48px;
+    line-height: 50px;
+    text-align: center;
+    letter-spacing: 5px;
+  
+    @media (max-width: 768px) {
+      font-size: 28px;
+      line-height: 30px;
+  
+    }
+  }
+
+
+
 .timer_box {
+    display: flex;
+    flex-direction: column;
     max-width: 485px;
     padding-top: 50px;
-    padding: 30px 20px;
+    padding: 10px 20px;
+    margin-bottom: 50px;
 }
 
 .flex {
@@ -19,6 +39,7 @@
     align-items: center;
     @media(max-width: 768px) {
         height: 50px;
+        width: 100%;
     }
 }
 
@@ -41,7 +62,6 @@
 
 
 .timer li+li:before {
-    width: 15px;
     height: 70px;
     display: block;
     font-size: 60px;

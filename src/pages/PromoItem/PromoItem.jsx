@@ -1,10 +1,9 @@
 import React, { useEffect } from 'react';
 import Categories from '../../components/common/Categories/Categories';
 import styles from './PromoItem.module.scss';
-import AirJordan from '../../assets/img/AirJordan.png';
-import AirJordan2 from '../../assets/img/AIR_JORDAN_XXXI_2.jpg';
-import AirJordan3 from '../../assets/img/AIR_JORDAN_XXXI_3.jpg';
-import AirJordan4 from '../../assets/img/AIR_JORDAN_XXXI_4.jpg';
+import size from '../../assets/img/size.png';
+import AirJordan1 from '../../assets/img/AirJordan1.jpeg';
+
 import run from '../../assets/img/icons/run.png';
 import shoes from '../../assets/img/icons/shoes.png';
 import wind from '../../assets/img/icons/wind.png';
@@ -24,37 +23,38 @@ function PromoItem() {
          <div className={styles.top}>
             <h2 className={styles.title}>AIR JORDAN XXXI lOW</h2>
             <div className={styles.top_content}>
-            <div
+               {/* <div
                   data-aos="zoom-in-up"
                   className={styles.right}
                >
                   <img
-                     src={AirJordan}
+                     src={AirJordan1}
                      alt=""
                   />
-               </div>
+               </div> */}
+               <SwiperItem />
                <div
-                  data-aos="fade-left"
+                  data-aos="fade-up"
                   className={styles.left}
                >
                   <p className={styles.text}>
-                     <b> Легендарні </b> кросівки 
-                     зі знижкою <b> 30% </b>
+                     <b> Легендарні </b> кросівки зі знижкою <b> 30% </b>
                   </p>
                   <div className={styles.price}>
                      <del>
                         <span className={styles.amount}>1850 грн</span>
                      </del>
                      <ins>
-                        <span className={styles.amount2}>1300 <b>грн</b> </span>
+                        <span className={styles.amount2}>
+                           1300 <b>грн</b>{' '}
+                        </span>
                      </ins>
                   </div>
                   <button className={styles.button}>Замовити</button>
                </div>
-               
             </div>
          </div>
-         <Timer/>
+         <Timer />
          <div className={styles.description_wrapper}>
             <div
                data-aos="fade-up"
@@ -105,8 +105,41 @@ function PromoItem() {
                </p>
             </div>
          </div>
-         <SwiperItem />
+         <div className={styles.feature}>
+            <h4 className={styles.feature_title1}>Характеристики</h4>
+            <div className={styles.feature_content}>
+               <div className={styles.feature_left}>
+                  <p className={styles.feature_title}>Виробник</p>
+                  <p className={styles.feature_title}>Бренд</p>
+                  <p className={styles.feature_title}>Матеріал</p>
+                  <p className={styles.feature_title}>Тип підошви</p>
+                  <p className={styles.feature_title}>Розміри</p>
+               </div>
+               <div className={styles.feature_right}>
+                  <p className={styles.feature_text}>Китай</p>
+                  <p className={styles.feature_text}>Gukker</p>
+                  <p className={styles.feature_text}>Текстиль ,Силікон ,Шкіра</p>
+                  <p className={styles.feature_text}>Платформа</p>
+                  <p className={styles.feature_text}>36-39</p>
+               </div>
+            </div>
+         </div>
          <div></div>
+         <div className={styles.size}>
+            <h5 className={styles.size_title}>Як правильно визначити розмір</h5>
+            <p className={styles.size_text}>
+               Найточнійший спосіб визначити розмір - по довжині стопи. <br />
+               Поставте ногу на листок А4 стоячи, зробіть олівцем чи ручкою відмітки у найдовшого
+               пальця та у п'ятки. Виміряйте відстань між цими точками, будьте уважні - вимірювати
+               відстань слід паралельно аркушу паперу, НЕ ПО ДІАГОНАЛІ.
+            </p>
+            <div className={styles.size_image}>
+               <img
+                  src={size}
+                  alt="Розмір"
+               />
+            </div>
+         </div>
       </div>
    );
 }
