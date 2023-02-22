@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/store-top-crocs/static/css/main.8a108c34.css",
-    "main.js": "/store-top-crocs/static/js/main.01f38f1e.js",
-    "static/media/AirJordan.png": "/store-top-crocs/static/media/AirJordan.bb04370de21f4f57d8f4.png",
-    "static/media/AIR_JORDAN_XXXI_3.jpg": "/store-top-crocs/static/media/AIR_JORDAN_XXXI_3.3789dc76c8ef6838daa0.jpg",
-    "static/media/AIR_JORDAN_XXXI_2.jpg": "/store-top-crocs/static/media/AIR_JORDAN_XXXI_2.8d217c1aa3774206bc18.jpg",
-    "static/media/AIR_JORDAN_XXXI_4.jpg": "/store-top-crocs/static/media/AIR_JORDAN_XXXI_4.b8c391d9d36bc748ac50.jpg",
+    "main.css": "/store-top-crocs/static/css/main.c51b7b44.css",
+    "main.js": "/store-top-crocs/static/js/main.fabd4558.js",
+    "static/media/AIR_JORDAN_XXXI_4.jpeg": "/store-top-crocs/static/media/AIR_JORDAN_XXXI_4.0a6cff34a9d1b525f4ed.jpeg",
+    "static/media/AIR_JORDAN_XXXI_2.jpeg": "/store-top-crocs/static/media/AIR_JORDAN_XXXI_2.78615b230efa72e6f562.jpeg",
+    "static/media/AirJordan1.jpeg": "/store-top-crocs/static/media/AirJordan1.f62d40dc8eed739fb546.jpeg",
+    "static/media/AIR_JORDAN_XXXI_3.jpeg": "/store-top-crocs/static/media/AIR_JORDAN_XXXI_3.e15cb0648ebfd828cc16.jpeg",
+    "static/media/size.png": "/store-top-crocs/static/media/size.ab96963c0d8da2e0ac82.png",
     "static/media/wind.png": "/store-top-crocs/static/media/wind.3b00d157b7a38d0456bb.png",
     "static/media/empty-cart.png": "/store-top-crocs/static/media/empty-cart.70f6a78ea5d49e7bb89e.png",
     "index.html": "/store-top-crocs/index.html",
-    "main.8a108c34.css.map": "/store-top-crocs/static/css/main.8a108c34.css.map",
-    "main.01f38f1e.js.map": "/store-top-crocs/static/js/main.01f38f1e.js.map"
+    "main.c51b7b44.css.map": "/store-top-crocs/static/css/main.c51b7b44.css.map",
+    "main.fabd4558.js.map": "/store-top-crocs/static/js/main.fabd4558.js.map"
   },
   "entrypoints": [
-    "static/css/main.8a108c34.css",
-    "static/js/main.01f38f1e.js"
+    "static/css/main.c51b7b44.css",
+    "static/js/main.fabd4558.js"
   ]
 }
